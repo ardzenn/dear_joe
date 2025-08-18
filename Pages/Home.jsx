@@ -77,8 +77,8 @@ const Hero = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
       <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
         <div className="space-y-8">
-          <div className="inline-flex items-center space-x-3">
-            <img src="/logo.png" alt="Dear Joe logo" className="w-14 h-14 rounded-xl object-cover shadow-sm" />
+          <div className="inline-flex items-center space-x-2">
+            <img src="/logo.png" alt="Dear Joe logo" className="w-12 h-12 rounded-xl object-cover shadow-sm" />
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold text-forest font-montserrat leading-tight">
                 Dear Joe
@@ -180,9 +180,7 @@ const MenuHighlights = () => {
           {menuItems.map((item, index) => (
             <div
               key={item.id}
-              className={`bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:ring-4 hover:ring-leaf/20 group ${
-                item.category === 'drinks' && index < 2 ? 'md:scale-110 ring-2 ring-accent-yellow/30' : ''
-              }`}
+              className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:ring-4 hover:ring-leaf/20 group"
               onMouseEnter={() => setHoveredItem(item.id)}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -195,11 +193,6 @@ const MenuHighlights = () => {
                 <div className={`absolute top-4 right-4 bg-accent-yellow rounded-full p-2 transform rotate-12 group-hover:rotate-0 transition-transform duration-300`}>
                   <Coffee className="w-4 h-4 text-forest" />
                 </div>
-                {item.category === 'drinks' && index < 2 && (
-                  <div className="absolute top-4 left-4 bg-forest text-cream text-xs px-3 py-1 rounded-full font-bold">
-                    HERO DRINK
-                  </div>
-                )}
                 <div className="absolute bottom-4 left-4 flex gap-2">
                   {item.badges.map((badge, badgeIndex) => (
                     <span 
@@ -506,7 +499,7 @@ const Footer = () => (
       <div className="grid md:grid-cols-3 gap-8">
         <div className="space-y-4">
           <div className="flex items-center space-x-3">
-            <img src="/logo.png" alt="Dear Joe logo" className="w-12 h-12 rounded-xl object-cover shadow-sm" />
+            <img src="/logo.png" alt="Dear Joe logo" className="w-10 h-10 rounded-xl object-cover shadow-sm" />
             <div>
               <h4 className="font-bold text-forest font-montserrat text-lg">Dear Joe</h4>
               <p className="text-forest/70 font-inter text-sm">Coffee & Juice</p>
