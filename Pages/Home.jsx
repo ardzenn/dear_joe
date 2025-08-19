@@ -419,6 +419,13 @@ const ReservationSection = () => {
 const BranchLocator = () => {
   const [selectedBranch, setSelectedBranch] = useState(0);
   
+  // Map URLs for each branch location
+  const mapUrls = {
+    0: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.8!2d123.2!3d13.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f0b0b0b0b0b%3A0x0!2sVistamall+Del+Rosario%2C+Naga+City!5e0!3m2!1sen!2sph!4v1699123456789!5m2!1sen!2sph",
+    1: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.8!2d122.5!3d10.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f0b0b0b0b0b%3A0x0!2sVistamall+Iloilo!5e0!3m2!1sen!2sph!4v1699123456789!5m2!1sen!2sph",
+    2: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.8!2d125.5!3d8.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f0b0b0b0b0b%3A0x0!2sCT+Montalban%2C+Butuan+City!5e0!3m2!1sen!2sph!4v1699123456789!5m2!1sen!2sph"
+  };
+  
   return (
     <section id="branches" className="py-20 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -435,7 +442,7 @@ const BranchLocator = () => {
           <div className="relative">
             <div className="aspect-[4/3] bg-white rounded-3xl overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153167!3d-37.8172099797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f4a315%3A0x33c5d3a1b0e6f8a5!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sph!4v1699123456789!5m2!1sen!2sph"
+                src={mapUrls[selectedBranch]}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -443,6 +450,7 @@ const BranchLocator = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="rounded-3xl"
+                key={selectedBranch}
               />
             </div>
           </div>
@@ -467,7 +475,7 @@ const BranchLocator = () => {
                   </span>
                 </div>
                 
-                <p className="text-ink/70 font-inter mb-2">
+                <p className="text-ink/70 font-inter mb-2 cursor-pointer hover:text-forest transition-colors">
                   {branch.address}
                 </p>
                 
@@ -479,7 +487,13 @@ const BranchLocator = () => {
                     </span>
                   </div>
                   
-                  <button onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branch.address)}`, '_blank', 'noopener')} className="text-forest hover:text-leaf transition-colors inline-flex items-center space-x-1 font-semibold text-sm">
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branch.address)}`, '_blank', 'noopener');
+                    }} 
+                    className="text-forest hover:text-leaf transition-colors inline-flex items-center space-x-1 font-semibold text-sm"
+                  >
                     <span>Open in Maps</span>
                     <ExternalLink className="w-4 h-4" />
                   </button>
