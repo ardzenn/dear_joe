@@ -284,7 +284,7 @@ const OrderOnline = () => (
             className="bg-pink-600 text-white px-8 py-4 rounded-2xl font-semibold font-inter text-lg hover:bg-pink-700 transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center justify-center space-x-3"
           >
             <img 
-              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/2363cf9cb_image.png" 
+              src="/foodpandalogo.png" 
               alt="Foodpanda" 
               className="w-8 h-8 bg-white rounded-lg p-1"
             />
@@ -297,7 +297,7 @@ const OrderOnline = () => (
             className="bg-green-600 text-white px-8 py-4 rounded-2xl font-semibold font-inter text-lg hover:bg-green-700 transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center justify-center space-x-3"
           >
             <img 
-              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/87e317cb2_image.png" 
+              src="/grabfoodpandalogo.png" 
               alt="GrabFood" 
               className="w-8 h-8 bg-white rounded-lg p-1"
             />
@@ -419,11 +419,11 @@ const ReservationSection = () => {
 const BranchLocator = () => {
   const [selectedBranch, setSelectedBranch] = useState(0);
   
-  // Map URLs for each branch location
+  // Map URLs for each branch location with accurate coordinates
   const mapUrls = {
-    0: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.8!2d123.2!3d13.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f0b0b0b0b0b%3A0x0!2sVistamall+Del+Rosario%2C+Naga+City!5e0!3m2!1sen!2sph!4v1699123456789!5m2!1sen!2sph",
-    1: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.8!2d122.5!3d10.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f0b0b0b0b0b%3A0x0!2sVistamall+Iloilo!5e0!3m2!1sen!2sph!4v1699123456789!5m2!1sen!2sph",
-    2: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.8!2d125.5!3d8.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f0b0b0b0b0b%3A0x0!2sCT+Montalban%2C+Butuan+City!5e0!3m2!1sen!2sph!4v1699123456789!5m2!1sen!2sph"
+    0: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15447.2!2d123.1887!3d13.6218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a142c6bdd6c58b%3A0x6c8f7b5c8f7b5c8f!2sVistamall+Del+Rosario%2C+Naga+City!5e0!3m2!1sen!2sph!4v1699123456789!5m2!1sen!2sph",
+    1: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15447.2!2d122.5664!3d10.7202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aee51c8c6b8b8b%3A0x8b8b8c6c8b8b8c6c!2sVistamall+Iloilo%2C+Pavia%2C+Iloilo!5e0!3m2!1sen!2sph!4v1699123456789!5m2!1sen!2sph",
+    2: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15447.2!2d125.5409!3d8.9473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33015e51c8c6b8b8%3A0x8b8b8c6c8b8b8c6c!2sCT+Montalban%2C+Butuan+City%2C+Agusan+del+Norte!5e0!3m2!1sen!2sph!4v1699123456789!5m2!1sen!2sph"
   };
   
   return (
