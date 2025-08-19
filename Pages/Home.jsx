@@ -296,11 +296,11 @@ const OrderOnline = () => (
             target="_blank" rel="noopener noreferrer"
             className="bg-green-600 text-white px-8 py-4 rounded-2xl font-semibold font-inter text-lg hover:bg-green-700 transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center justify-center space-x-3"
           >
-            <img 
-              src="/grabfoodpandalogo.png" 
-              alt="GrabFood" 
-              className="w-8 h-8 bg-white rounded-lg p-1"
-            />
+                         <img 
+               src="/grabfoodlogo.png" 
+               alt="GrabFood" 
+               className="w-8 h-8 bg-white rounded-lg p-1"
+             />
             <span>GrabFood</span>
           </a>
         </div>
